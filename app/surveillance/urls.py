@@ -8,7 +8,6 @@ from drf_spectacular.views import(
     SpectacularSwaggerView,
     SpectacularRedocView
 )
-
 from django.conf import settings
 from django.conf.urls.static import static
 
