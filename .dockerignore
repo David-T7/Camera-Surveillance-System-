@@ -1,0 +1,46 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+*.egg-info
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.venv/
+venv/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+*.md
+LICENSE
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Media/Static files (handled by volumes)
+app/media/
+app/static/
