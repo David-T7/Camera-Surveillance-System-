@@ -111,6 +111,16 @@ app/
 
 ---
 
+## Release readiness
+
+- [x] Reference photo + verify snapshot APIs used by vetting
+- [x] Frontend pause/hold flow on repeated failures (main backend hold API)
+- [ ] Tune face match tolerance if false pauses are common
+
+**Checklist:** `c:\toptal\Django Project\RELEASE_READINESS.md`
+
+---
+
 ## Related
 
 | Component | File |
