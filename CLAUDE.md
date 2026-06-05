@@ -114,8 +114,11 @@ app/
 ## Release readiness
 
 - [x] Reference photo + verify snapshot APIs used by vetting
-- [x] Frontend pause/hold flow on repeated failures (main backend hold API)
+- [x] Frontend reports holds to main backend (`proctoring-violation`); camera errors ≠ hold UI copy
+- [x] Pre-test: inline snapshot warnings; hold enforced on status/hub before camera check
 - [ ] Tune face match tolerance if false pauses are common
+
+**No service changes in 2026-06-02 vetting batch** — integration updates live in main backend + React `CameraContext.js`.
 
 **Checklist:** `c:\toptal\Django Project\RELEASE_READINESS.md`
 
