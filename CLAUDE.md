@@ -26,7 +26,7 @@ Swagger: `http://127.0.0.1:8003/api/docs/`
 
 `core.authentication.CustomJWTAuthentication` — Bearer JWT decoded with **`SECRET_KEY`** (same as main backend).
 
-**ID field:** `freelancer_id` in form body = resume UUID for candidates, freelancer UUID for accepted freelancers.
+**Identity:** `freelancer_id` is extracted from the verified JWT payload (`request.auth['user_id']`). Do **not** pass it in the request body — the backend ignores it and reads from the token.
 
 ---
 
@@ -42,8 +42,8 @@ Swagger: `http://127.0.0.1:8003/api/docs/`
 
 ```
 multipart/form-data:
-  freelancer_id: UUID
   screenshot: image/jpeg
+Authorization: Bearer <candidate_token>
 ```
 
 ### Response actions
@@ -104,7 +104,6 @@ app/
 ## Common Gotchas
 
 - **404 on verify** usually means missing `Profile` — not a missing URL route.
-- **Logs `Access token is:`** — debug print in `authentication.py` (confirms JWT reached service).
 - **Tolerance 0.5** in `compare_faces` — stricter matching; poor lighting causes `pause`.
 - **Container must be running** during tests — otherwise frontend skips/retries or pauses.
 - **CORS** — `localhost:3000` only in dev settings.
