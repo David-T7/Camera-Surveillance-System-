@@ -1,6 +1,10 @@
 # EthioGig Surveillance System — Developer Reference
 
-Face-based **test proctoring** microservice. Stores a reference photo per candidate/freelancer and verifies periodic webcam snapshots during tests.
+Face-based **AI test proctoring** microservice. Stores a reference photo per candidate/freelancer and verifies periodic webcam snapshots during tests.
+
+> **Two proctoring layers exist in parallel:**
+> 1. **This service (8003)** — automated AI face-matching via snapshots during the test (async, periodic).
+> 2. **Manual live proctoring** (main backend, 8000) — human proctor watches live WebRTC stream (camera + full screen share) before and during tests. Controlled by `ScreeningConfig.require_manual_proctoring`. See main backend `CLAUDE.md` for details.
 
 **Path:** `c:\toptal\Surveillance System\`  
 **Port:** `8003`  
